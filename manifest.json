@@ -1,9 +1,13 @@
 {
   "manifest_version": 3,
   "name": "TargetClip",
-  "version": "1.0",
+  "version": "1.1",
   "description": "TargetClipは、ウェブページの内容を簡単に取得し、クリップボードにコピーできるChrome拡張機能です。カスタマイズ可能なので、様々な用途に対応できます。",
-  "permissions": ["activeTab", "clipboardWrite", "storage"],
+  "permissions": ["activeTab", "clipboardWrite", "storage", "offscreen", "notifications"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
